@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTask - Advanced To-Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container-lg">
+            <span class="navbar-brand mb-0 h1">
+                <i class="fas fa-tasks"></i> ProTask
+            </span>
+            <button class="btn btn-outline-light btn-sm" id="darkModeToggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container-lg mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <!-- Main Card -->
+                <div class="card shadow-xl main-card">
+                    <!-- Header Section -->
+                    <div class="card-header premium-gradient text-white">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h1 class="mb-0"><i class="fas fa-check-circle"></i> My Tasks</h1>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-light btn-sm" id="settingsBtn" title="Settings">
+                                    <i class="fas fa-cog"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <!-- Progress Bar -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <small class="text-muted">Progress</small>
+                                <small class="text-muted"><span id="progressPercent">0</span>%</small>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div id="progressBar" class="progress-bar progress-animated" role="progressbar" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Input Section -->
+                        <div class="input-group mb-3 input-wrapper">
+                            <input 
+                                type="text" 
+                                id="taskInput" 
+                                class="form-control premium-input" 
+                                placeholder="What needs to be done today?"
+                                autocomplete="off"
+                            >
+                            <select id="prioritySelect" class="form-select priority-select">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                            <input type="date" id="dueDateInput" class="form-control">
+                            <button class="btn btn-success" type="button" id="addBtn">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+
+                        <!-- Search & Filter Section -->
+                        <div class="row mb-3 g-2">
+                            <div class="col-md-6">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-text bg-light border-0">
+                                        <i class="fas fa-search text-muted"></i>
+                                    </span>
+                                    <input 
+                                        type="text" 
+                                        id="searchInput" 
+                                        class="form-control border-0 bg-light" 
+                                        placeholder="Search tasks..."
+                                        autocomplete="off"
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check" name="filter" id="filterAll" value="all" checked>
+                                    <label class="btn btn-outline-secondary btn-sm" for="filterAll">All</label>
+
+                                    <input type="radio" class="btn-check" name="filter" id="filterActive" value="active">
+                                    <label class="btn btn-outline-secondary btn-sm" for="filterActive">Active</label>
+
+                                    <input type="radio" class="btn-check" name="filter" id="filterCompleted" value="completed">
+                                    <label class="btn btn-outline-secondary btn-sm" for="filterCompleted">Completed</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tasks List -->
+                        <div id="tasksContainer" class="tasks-container">
+                            <ul id="tasksList" class="list-group list-group-flush">
+                                <!-- Tasks will be added here -->
+                            </ul>
+                        </div>
+
+                        <!-- Empty State -->
+                        <div id="emptyState" class="text-center py-5">
+                            <i class="fas fa-inbox text-muted" style="font-size: 3rem;"></i>
+                            <p class="text-muted mt-3">No tasks yet. Add one to get started! 🚀</p>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="d-flex gap-2 mt-4">
+                            <button class="btn btn-warning btn-sm flex-grow-1" id="clearBtn">
+                                <i class="fas fa-eraser"></i> Clear Completed
+                            </button>
+                            <button class="btn btn-danger btn-sm flex-grow-1" id="deleteAllBtn">
+                                <i class="fas fa-trash"></i> Delete All
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Footer Stats -->
+                    <div class="card-footer bg-light border-top-0">
+                        <div class="row text-center text-sm">
+                            <div class="col">
+                                <div class="stat-item">
+                                    <div class="stat-value" id="totalTasks">0</div>
+                                    <div class="stat-label">Total</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="stat-item">
+                                    <div class="stat-value text-success" id="completedTasks">0</div>
+                                    <div class="stat-label">Completed</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="stat-item">
+                                    <div class="stat-value text-warning" id="remainingTasks">0</div>
+                                    <div class="stat-label">Remaining</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="stat-item">
+                                    <div class="stat-value text-danger" id="overdueTasks">0</div>
+                                    <div class="stat-label">Overdue</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips Section -->
+                <div class="mt-4 alert alert-info alert-dismissible fade show" role="alert">
+                    <i class="fas fa-lightbulb"></i> <strong>Pro Tips:</strong> Use priority levels, set due dates, and search to organize your tasks effectively!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="toast" class="toast" role="alert">
+            <div class="toast-body">
+                <i id="toastIcon" class="fas fa-check-circle text-success"></i>
+                <span id="toastMessage"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
