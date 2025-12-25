@@ -41,8 +41,8 @@ A modern, feature-rich to-do list web application built with HTML5, CSS3, Bootst
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/ProTask.git
-cd ProTask
+git clone https://github.com/AdilbekAllayarov/To-Do-List.git
+cd To-Do-List
 ```
 
 2. Open `index.html` in your web browser
@@ -94,9 +94,11 @@ MIT License - feel free to use this project for personal or commercial use.
 
 ## Author
 
-Created with ❤️ 
+Created by **Adilbek Allayarov**
+
+GitHub: [@AdilbekAllayarov](https://github.com/AdilbekAllayarov) 
 
 ## Contributing
 
 Feel free to fork and submit pull requests for any improvements!
-# To-Do-List
+
