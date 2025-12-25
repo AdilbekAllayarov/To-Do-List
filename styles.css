@@ -633,16 +633,28 @@ body.dark-mode .tasks-container::-webkit-scrollbar-track {
     }
 
     .input-wrapper {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
     }
 
     .input-wrapper input,
     .input-wrapper select {
-        width: 100%;
+        flex: 1 1 calc(33.333% - 0.35rem);
+        min-width: 80px;
+        font-size: 1rem;
+        padding: 0.75rem;
     }
 
     .input-wrapper button {
+        flex: 1 1 100%;
         width: 100%;
+        font-size: 0.95rem;
+        padding: 0.75rem;
+    }
+
+    .premium-input {
+        font-size: 0.95rem;
     }
 
     .row > .col-md-6 {
