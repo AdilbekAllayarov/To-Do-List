@@ -1,221 +1,72 @@
-# ProTask - Advanced To-Do List
+ProTask – To-Do List Web App
 
-🚀 A modern, feature-rich to-do list web application built with **HTML5, CSS3, Bootstrap 5, and vanilla JavaScript**. Perfect for managing tasks with priorities, due dates, and more!
+ProTask is a simple to-do list web application built using HTML, CSS, Bootstrap 5, and vanilla JavaScript.
+This project was created to practice front-end fundamentals and basic state management using LocalStorage.
 
-## 🌟 Live Demo
+Demo
 
-🔗 **Visit:** [ProTask Live Demo](https://protask-todo.netlify.app) *(Coming Soon)*
+Live demo:
+https://protask-todo.netlify.app (to be deployed)
 
-## ✨ Features
+Features
+	•	Add, edit, and delete tasks
+	•	Mark tasks as completed or active
+	•	Set task priority (High, Medium, Low)
+	•	Optional due dates with overdue indication
+	•	Search tasks by keyword
+	•	Filter tasks (All / Active / Completed)
+	•	Task progress indicator
+	•	Dark mode support
+	•	Data saved locally using LocalStorage
 
-### ✅ **Task Management**
-- ➕ Add, edit, and delete tasks instantly
-- ✓ Mark tasks as complete/incomplete with visual feedback
-- 📊 Real-time task statistics and progress tracking
-- 🎯 Smart task sorting by priority and due date
+Technologies
+	•	HTML5 – page structure
+	•	CSS3 – layout and styling
+	•	Bootstrap 5 – responsive UI components
+	•	Font Awesome – icons
+	•	Vanilla JavaScript – application logic
 
-### 🎨 **Advanced Features**
-- 🚩 **Priority Levels** (High, Medium, Low) with color-coded badges
-- 📅 **Due Date Tracking** with overdue detection and highlighting
-- 🔍 **Smart Search** - Find tasks by keyword in real-time
-- 🔎 **Multiple Filters** - View All, Active, or Completed tasks
-- 📈 **Progress Bar** - Visual completion percentage tracker
-- 🎪 **Task Categorization** - Organized task management
+No external JavaScript frameworks or libraries are used.
 
-### 🎨 **User Experience**
-- 🌈 Beautiful gradient UI with modern design
-- 🌙 Dark mode toggle (saves preference)
-- 🔔 Toast notifications for all actions
-- 📱 Fully responsive mobile-first design
-- ✨ Smooth animations and transitions
-- 🎯 Intuitive interface with Font Awesome icons
-- ⚡ Lightning-fast performance
+Installation
 
-### 💾 **Data Persistence**
-- 💿 LocalStorage to save tasks between sessions
-- 🔒 All data stored locally on your device (100% private)
-- 📲 No account or sign-up required
+Clone the repository: git clone https://github.com/AdilbekAllayarov/To-Do-List.git cd To-Do-List
+Open index.html directly in your browser.
+No build tools or dependencies are required.
 
-## 🛠️ Technologies Used
+Usage
+	1.	Enter a task name
+	2.	Select priority and due date (optional)
+	3.	Add the task
+	4.	Use checkboxes to mark tasks as completed
+	5.	Edit or delete tasks as needed
+	6.	Use search and filters to organize tasks
+	7.	Switch between light and dark mode
 
-| Technology | Purpose |
-|-----------|---------|
-| **HTML5** | Semantic markup & structure |
-| **CSS3** | Modern styling with Grid & Flexbox |
-| **Bootstrap 5** | Responsive framework & components |
-| **Font Awesome 6** | Beautiful icon library |
-| **Vanilla JavaScript** | Zero dependencies, pure JS |
+All data is stored locally in the browser.
 
-## 📥 Installation
-
-### Quick Start
-1. Clone the repository:
-```bash
-git clone https://github.com/AdilbekAllayarov/To-Do-List.git
-cd To-Do-List
-```
-
-2. Open `index.html` in your web browser:
-```bash
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
-
-# Windows
-start index.html
-```
-
-**That's it!** No installation, dependencies, or build process required. ✨
-
-### Alternative: Online
-- Download the ZIP file from GitHub
-- Extract and open `index.html` in your browser
-
-## 📖 Usage Guide
-
-### Basic Operations
-1. **Add a Task** ➕
-   - Enter task text
-   - Select priority level (optional)
-   - Set due date (optional)
-   - Click "Add" or press Enter
-
-2. **Manage Tasks** 📝
-   - ✓ Check to mark complete
-   - ✏️ Edit button to modify task
-   - 🗑️ Delete button to remove task
-
-3. **Organize Tasks** 🎯
-   - 🔍 Use search to find tasks
-   - 🔎 Filter by status (All/Active/Completed)
-   - Auto-sorts by priority & due date
-
-4. **Preferences** ⚙️
-   - 🌙 Toggle dark/light mode
-   - 📊 View progress & statistics
-   - 🔔 Get action confirmations
-
-5. **Manage All Tasks**
-   - 🧹 Clear all completed tasks
-   - 🗑️ Delete all tasks (with confirmation)
-
-## 🎯 Features in Detail
-
-### Priority Levels
-```
-🔴 High    - Urgent tasks (Red)
-🟡 Medium  - Normal tasks (Yellow)
-🟢 Low     - Low priority (Green)
-```
-
-### Due Dates
-- Set optional deadlines for tasks
-- Overdue tasks highlighted in red
-- Automatic sorting by due date
-- Past dates show as "Overdue"
-
-### Search & Filter
-- Real-time search across all tasks
-- Filter by completion status
-- Results maintain priority order
-- Case-insensitive search
-
-### Dark Mode
-- Toggle between light & dark themes
-- Smooth theme transition
-- Preference saved in localStorage
-- Reduces eye strain at night
-
-## 📊 Statistics Dashboard
-
-Track your productivity with real-time stats:
-- 📈 **Total Tasks** - All tasks created
-- ✅ **Completed** - Finished tasks
-- ⏳ **Remaining** - Tasks to do
-- ⚠️ **Overdue** - Tasks past deadline
-
-## 🌐 Browser Support
-
-Works on all modern browsers supporting:
-- ✅ ES6+ JavaScript
-- ✅ CSS Grid & Flexbox
-- ✅ LocalStorage API
-- ✅ Modern CSS features
-
-**Tested on:**
-- Chrome/Chromium 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-## 🎨 Customization
-
-### Change Colors
-Edit `styles.css`:
-```css
-:root {
-    --primary: #667eea;
-    --secondary: #764ba2;
-    --success: #10b981;
-    --danger: #ef4444;
-}
-```
-
-### Add New Features
-Edit `script.js` to extend functionality while maintaining simplicity.
-
-## 📁 Project Structure
-
-```
+Project Structure
 To-Do-List/
-├── index.html      # Main HTML structure
-├── styles.css      # Complete styling
-├── script.js       # All functionality
-├── README.md       # Documentation
-└── .gitignore      # Git configuration
-```
+  index.html
+  styles.css
+  script.js
+  README.md
+  .gitignore
+Browser Support
 
-## 📄 License
+Tested on modern browsers:
+	•	Chrome
+	•	Firefox
+	•	Edge
+	•	Safari
 
-**MIT License** - Feel free to use this project for personal or commercial use.
+Requires support for ES6 and LocalStorage.
 
-## 👨‍💻 Author
+License
 
-Created by **[Adilbek Allayarov](https://github.com/AdilbekAllayarov)**
+This project is licensed under the MIT License.
 
-GitHub: [@AdilbekAllayarov](https://github.com/AdilbekAllayarov)
+Author
 
-## 🚀 Roadmap
-
-Future features planned:
-- [ ] Task categories/labels
-- [ ] Recurring tasks
-- [ ] Task notes & descriptions
-- [ ] Export to CSV/PDF
-- [ ] Cloud sync
-- [ ] Mobile app version
-- [ ] Collaboration features
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
-
-## 📞 Support
-
-Found a bug or have a feature request? 
-- Open an issue on GitHub
-- Check existing issues first
-
-## ⭐ Show Your Support
-
-If you find this useful, please give it a ⭐ on GitHub!
-
----
-
-**Made with ❤️ for productivity lovers**
-
+Adilbek Allayarov
+GitHub: https://github.com/AdilbekAllayarov
